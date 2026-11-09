@@ -1,0 +1,12 @@
+# Kişisel yedek dosyaları depoya gönderilmesin
+yks-planlayici-yedek-*.json
+
+# İşletim sistemi / editör dosyaları
+Thumbs.db
+desktop.ini
+.DS_Store
+*.lnk
+.claude/
+.vscode/
+.idea/
+*.log

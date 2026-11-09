@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Uygulama tamamen çevrimdışı çalışır: hiçbir dış kaynak yüklenmez. -->
+  <meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'">
+  <title>YKS Planlayıcı</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="brand">
+        <div class="brand-logo">Y</div>
+        <div class="brand-text">
+          <div class="brand-title">YKS Planlayıcı</div>
+          <div class="brand-sub" id="sidebarCountdown"></div>
+        </div>
+      </div>
+      <nav class="nav" id="nav">
+        <button class="nav-btn" data-nav="calendar" title="Takvim (Alt+1)"><span class="ico">▦</span><span class="lbl">Takvim</span></button>
+        <button class="nav-btn" data-nav="week" title="Bu hafta (Alt+2)"><span class="ico">▤</span><span class="lbl">Haftalık Plan</span></button>
+        <button class="nav-btn" data-nav="subjects" title="Dersler (Alt+3)"><span class="ico">◧</span><span class="lbl">Dersler</span></button>
+        <button class="nav-btn" data-nav="exams" title="Denemeler (Alt+4)"><span class="ico">◔</span><span class="lbl">Denemeler</span></button>
+        <button class="nav-btn" data-nav="notes" title="Hap Bilgiler (Alt+5)"><span class="ico">✦</span><span class="lbl">Hap Bilgiler</span></button>
+        <button class="nav-btn" data-nav="finished" title="Bitirilenler (Alt+6)"><span class="ico">✔</span><span class="lbl">Bitirilenler</span><span class="badge" id="finishedBadge"></span></button>
+      </nav>
+      <div class="nav-spacer"></div>
+      <nav class="nav nav-bottom">
+        <button class="nav-btn" data-nav="settings" title="Ayarlar (Alt+7)"><span class="ico">⚙</span><span class="lbl">Ayarlar</span></button>
+      </nav>
+    </aside>
+
+    <main id="main">
+      <header id="topbar">
+        <div class="tb-left">
+          <button class="icon-btn" id="btnBack" title="Geri (Alt+←, Backspace)">←</button>
+          <button class="icon-btn" id="btnForward" title="İleri (Alt+→)">→</button>
+          <button class="icon-btn" id="btnHome" title="Ana ekran (Alt+Home)">⌂</button>
+          <h1 id="viewTitle"></h1>
+        </div>
+        <div class="tb-right">
+          <div class="tb-stat" id="tbStats"></div>
+          <button class="icon-btn" id="btnUndo" title="Geri al (Ctrl+Z)">↶</button>
+          <button class="icon-btn" id="btnRedo" title="Yinele (Ctrl+Y)">↷</button>
+          <button class="icon-btn" id="btnHelp" title="Kısayollar (F1)">?</button>
+        </div>
+      </header>
+      <section id="view"></section>
+    </main>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="ctxMenu" class="ctx-menu hidden"></div>
+  <div id="toasts"></div>
+
+  <!-- Veriler -->
+  <script src="js/data/curriculum.js"></script>
+  <script src="js/data/formulas.js"></script>
+  <script src="js/data/periodic.js"></script>
+  <script src="js/data/quotes.js"></script>
+  <!-- Çekirdek -->
+  <script src="js/util.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <!-- Ekranlar -->
+  <script src="js/views/calendar.js"></script>
+  <script src="js/views/week.js"></script>
+  <script src="js/views/subjects.js"></script>
+  <script src="js/views/exams.js"></script>
+  <script src="js/views/notes.js"></script>
+  <script src="js/views/finished.js"></script>
+  <script src="js/views/settings.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
